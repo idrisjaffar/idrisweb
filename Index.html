@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jaffar Shariff - Your Digital Ally</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #3498db;
+            --secondary-color: #2ecc71;
+            --gold-color: #gold;
+            --white-color: #1b8d4e;
+            --black-color: #21114e;
+            --background-color: #9bd416;
+            --logo-background: rgb(255, 217, 0);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        body {
+            line-height: 1.7;
+            color: #4a4a4a;
+            background-color: var(--background-color);
+        }
+
+        a {
+            text-decoration: none;
+            color: var(--gold-color);
+            transition: color 0.3s ease;
+        }
+
+        a:hover {
+            color: #0f97f1;
+        }
+
+        .header {
+            background: var(--orange);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .navbar {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.2rem 1rem;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .js-logo {
+            background: var(--gold-color);
+            color: var(--black-color);
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 40px;
+            font-weight: bold;
+        }
+
+        .logo {
+            font-size: 2rem;
+            font-weight: 600;
+            margin-left: 1rem;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            font-size: 1rem;
+            transition: color 0.3s ease;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: var(--white-color);
+            padding: 8rem 2rem 4rem;
+            text-align: center;
+        }
+
+        .hero-content h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            margin-top: 2rem;
+        }
+
+        .cta-btn {
+            background: var(--gold-color);
+            color: var(--primary-color);
+            padding: 1rem 2rem;
+            border-radius: 25px;
+            font-weight: 600;
+            transition: transform 0.3s ease;
+        }
+
+        .cta-btn:hover {
+            transform: translateY(-3px);
+        }
+
+        .section {
+            padding: 4rem 2rem;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            color: var(--black-color);
+            margin-bottom: 2rem;
+            font-size: 2rem;
+            font-weight: 600;
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .profile-img {
+            width: 100%;
+            height: 600px;
+            object-fit: cover;
+            border-radius: 20px;
+        }
+
+        .bio {
+            padding: 1rem;
+        }
+
+        .skill-list {
+            list-style: none;
+            padding-left: 1rem;
+        }
+
+        .skill-list li {
+            margin-bottom: 0.5rem;
+        }
+
+        .service-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .service-card {
+            background: var(--gold-color);
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.08);
+            text-align: center;
+        }
+
+        .service-icon {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+        }
+
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .project-card {
+            background: var(--primary-color);
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(126, 138, 60, 0.08);
+        }
+
+        .project-link {
+            color: var(--primary-color);
+            font-weight: 600;
+            display: inline-block;
+            margin-top: 1rem;
+        }
+
+        .contact-info {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 2rem;
+        }
+
+        .contact-card {
+            background: var(--white-color);
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.08);
+        }
+
+        .social-links {
+            list-style: none;
+            padding-left: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .social-link {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem;
+            border-radius: 5px;
+            transition: background 0.3s ease;
+        }
+
+        .social-link:hover {
+            background: #f0f0f0;
+        }
+
+        .contact-card form input,
+        .contact-card form textarea,
+        .contact-card form button {
+            width: 100%;
+            margin-bottom: 10px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        .contact-card form button {
+            background-color: var(--gold-color);
+            color: var(--white-color);
+            border: none;
+            cursor: pointer;
+        }
+
+        .footer {
+            background: var(--black-color);
+            color: var(--white-color);
+            text-align: center;
+            padding: 2rem;
+            margin-top: 4rem;
+        }
+
+        .whatsapp-btn {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            background: #25d366;
+            color: var(--white-color);
+            padding: 1rem;
+            border-radius: 50%;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+            animation: float 2s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .about-content {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-info {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header class="header">
+        <nav class="navbar">
+            <div class="logo-container">
+                <div class="js-logo">
+                    <svg width="80" height="80" viewBox="0 0 80 80">
+                        <circle cx="40" cy="40" r="38" fill="#3498db" />
+                        <text x="40" y="55" text-anchor="middle" fill="white" font-size="24">JS</text>
+                    </svg>
+                </div>
+                <div class="logo">Jaffar Shariff</div>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">What I Offer</a></li>
+                <li><a href="#projects">My Projects</a></li>
+                <li><a href="#contact">Contact Me</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Building Your Online Success Story</h1>
+            <p>Freelance digital wizard, ready to make your online presence shine.</p>
+            <div class="cta-buttons">
+                <a href="#contact" class="cta-btn">Let's Talk</a>
+                <a href="#projects" class="cta-btn">Check My Work</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="section">
+        <h2 class="section-title">A Little About Me</h2>
+        <div class="about-content">
+            <img src="Profile.JPG" alt="Jaffar Shariff" class="profile-img">
+            <div class="bio">
+                <p>Hey there! I'm Jaffar, based in Ongata Rongai. Think of me as your digital ally. I’m not just about coding and marketing; I’m about crafting online experiences that truly connect. I’ve spent the last few years diving deep into the digital world, learning and growing with every project.</p>
+                <p>What gets me going? Helping organizations and individuals build a solid online foundation. Whether it's managing social media, building a website from scratch, or handling virtual assistant tasks, I'm all in.</p>
+                <div class="skills">
+                    <h3>Here's What I Bring to the Table:</h3>
+                    <ul class="skill-list">
+                        <li><i class="fas fa-check"></i> Social Media Management (Content, Engagement, Ads)</li>
+                        <li><i class="fas fa-check"></i> Website Development (HTML, CSS, JavaScript, WordPress)</li>
+                        <li><i class="fas fa-check"></i> Virtual Assistance (Data Entry, CRM, Admin Support)</li>
+                        <li><i class="fas fa-check"></i> Transcription and Transcribing</li>
+                        <li><i class="fas fa-check"></i> Digital Marketing (SEO, Content Strategy)</li>
+                        <li><i class="fas fa-check"></i> And a whole lot of dedication!</li>
+                    </ul>
+                </div>
+                <p>I believe in building trust and delivering results. Let's make something amazing together!</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="services" class="section">
+        <h2 class="section-title">What I Offer</h2>
+        <div class="service-grid">
+            <div class="service-card">
+                <i class="fas fa-users service-icon"></i>
+                <h3>Social Media Magic</h3>
+                <p>Creating engaging content and managing your online presence.</p>
+            </div>
+            <div class="service-card">
+                <i class="fas fa-laptop-code service-icon"></i>
+                <h3>Web Crafting</h3>
+                <p>Building websites that are both beautiful and functional.</p>
+            </div>
+            <div class="service-card">
+                <i class="fas fa-tasks service-icon"></i>
+                <h3>Virtual Support</h3>
+                <p>Handling tasks so you can focus on what matters most.</p>
+            </div>
+            <div class="service-card">
+                <i class="fas fa-file-audio service-icon"></i>
+                <h3>Audio to Text</h3>
+                <p>Transcription and Transcribing services.</p>
+            </div>
+            <div class="service-card">
+                <i class="fas fa-chart-line service-icon"></i>
+                <h3>Online Growth</h3>
+                <p>Using digital strategies to boost your online visibility.</p>
+            </div>
+            <div class="service-card">
+                <i class="fas fa-paint-brush service-icon"></i>
+                <h3>Graphic Design</h3>
+                <p>Creating visually appealing designs for your brand.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="section">
+        <h2 class="section-title">My Projects</h2>
+        <div class="project-grid">
+            <div class="project-card">
+                <h3>Project Title 1</h3>
+                <p>Brief description of the project.</p>
+                <a href="#" class="project-link">View Project</a>
+            </div>
+            <div class="project-card">
+                <h3>Project Title 2</h3>
+                <p>Brief description of the project.</p>
+                <a href="#" class="project-link">View Project</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="section">
+        <h2 class="section-title">Let's Connect</h2>
+        <div class="contact-info">
+            <div class="contact-card">
+                <h3><i class="fas fa-address-book"></i> Get in Touch</h3>
+                <p><i class="fas fa-phone"></i> <a href="tel:+25469165499">+254 691 65499</a></p>
+                <p><i class="fas fa-envelope"></i> <a href="mailto:idrisjaphar@gmail.com">idrisjaphar@gmail.com</a></p>
+                <p><i class="fas fa-map-marker-alt"></i> Ongata Rongai, Kajiado County</p>
+            </div>
+            <div class="contact-card">
+                <h3><i class="fas fa-share-alt"></i> Find Me Online</h3>
+                <ul class="social-links">
+                    <li><a href="https://www.linkedin.com/in/yourlinkedinprofile" class="social-link" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a></li>
+                    <li><a href="https://twitter.com/yourtwitter" class="social-link" target="_blank"><i class="fab fa-twitter"></i> Twitter</a></li>
+                    <li><a href="https://github.com/yourgithub" class="social-link" target="_blank"><i class="fab fa-github"></i> GitHub</a></li>
+                    <li><a href="https://wa.me/yourwhatsappnumber" class="social-link" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp</a></li>
+                </ul>
+            </div>
+            <div class="contact-card">
+                <h3><i class="fas fa-comment"></i> Send a Message</h3>
+                <form action="mailto:idrisjaphar@gmail.com" method="post" enctype="text/plain">
+                    <input type="text" name="name" placeholder="Your Name" required><br>
+                    <input type="email" name="email" placeholder="Your Email" required><br>
+                    <textarea name="message" placeholder="Your Message" required></textarea><br>
+                    <button type="submit">Send</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <p>&copy; 2025 Jaffar Shariff. All rights reserved.</p>
+        <p>Ongata Rongai, Kajiado County | +254 758 514602</p>
+    </footer>
+
+    <a href="https://wa.me/yourwhatsappnumber" class="whatsapp-btn" target="_blank"><i class="fab fa-whatsapp"></i></a>
+</body>
+
+</html>
